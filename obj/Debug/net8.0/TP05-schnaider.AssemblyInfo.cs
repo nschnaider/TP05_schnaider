@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TP05-schnaider")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47838e9c6a707c8a2810a152c6a21da495aeb345")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcbe260fc0ebc69c9e768421f67b86599647e521")]
 [assembly: System.Reflection.AssemblyProductAttribute("TP05-schnaider")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TP05-schnaider")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
