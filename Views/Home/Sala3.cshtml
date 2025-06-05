@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Sala 3 - Vagón de Pasajeros";
+}
+<h2>🎭 Vagón de Pasajeros</h2>
+<p>Hay 6 figuras sentadas frente a vos. Todas miran al frente, menos una...</p>
+<p><strong>Pista:</strong> “Solo uno no teme mirar al pasado...”</p>
+
+<form method="post" asp-action="ResolverSala" asp-route-id="3">
+    <input type="text" name="codigo" placeholder="Número del asiento del que te mira" required />
+    <button type="submit">Identificar pasajero</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}

@@ -1,23 +1,83 @@
-html {
-  font-size: 14px;
-  min-height: 100%;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
+/* General body styling */
 body {
-  margin: 10px;
-  padding: 10px;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
 }
 
+/* Headings */
+h1 {
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
 
-footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+/* Buttons */
+.btn-primary {
+    background-color: #ff6f61;
+    border-color: #ff6f61;
+}
+
+.btn-primary:hover {
+    background-color: #e65b50;
+    border-color: #e65b50;
+}
+
+.btn-secondary {
+    background-color: #444;
+    border-color: #444;
+    color: #ccc;
+}
+
+.btn-secondary:hover {
+    background-color: #666;
+    border-color: #666;
+    color: #fff;
+}
+
+/* Puzzle clue box */
+#pista {
+    background-color: #222;
+    border-radius: 5px;
+    color: #ddd;
+}
+
+/* Form inputs */
+input[type="text"], input[type="password"] {
+    background-color: #222;
+    border: 1px solid #555;
+    color: #eee;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+/* Layout for mannequins buttons */
+.d-flex.flex-wrap.justify-content-center button {
+    background-color: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.d-flex.flex-wrap.justify-content-center button:hover {
+    border-color: #ff6f61;
+}
+
+/* Images rounded */
+img.rounded-circle {
+    border: 3px solid #ff6f61;
+}
+
+/* Alert messages */
+.alert-danger {
+    background-color: #a94442;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
 }

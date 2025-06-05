@@ -1,0 +1,20 @@
+@{
+    ViewData["Title"] = "Sala 2 - Vagón Comedor";
+}
+<h2>🍽 Vagón Comedor</h2>
+<p>Una mesa servida. Observás cuidadosamente:</p>
+<ul>
+    <li>El plato tiene manchas formando un “3”.</li>
+    <li>La copa refleja un símbolo de un “8”.</li>
+    <li>Una servilleta manchada forma un “5”.</li>
+</ul>
+
+<form method="post" asp-action="ResolverSala" asp-route-id="2">
+    <input type="text" name="codigo" placeholder="Combinación de la caja fuerte" required />
+    <button type="submit">Abrir caja fuerte</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}

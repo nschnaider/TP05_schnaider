@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Sala 4 - Vagón del Maquinista";
+}
+<h2>⚙️ Vagón del Maquinista</h2>
+<p>Frente a vos hay una consola con palancas, botones y una pantalla digital.</p>
+<p>Para detener el tren necesitás:</p>
+<ul>
+    <li>El código del vagón de equipajes</li>
+    <li>El código del comedor</li>
+    <li>El número del pasajero infiltrado</li>
+</ul>
+<p>Ingresá el código completo (7 dígitos) para activar el freno.</p>
+
+<form method="post" asp-action="ResolverSala" asp-route-id="4">
+    <input type="text" name="codigo" placeholder="Código final (ej. 7423582)" required />
+    <button type="submit">Activar Freno</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
