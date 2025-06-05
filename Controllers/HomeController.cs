@@ -60,17 +60,14 @@ public IActionResult ResolverSala(int id, string codigo)
     {
         if (id == 2) jugador.ObtenerLlave();
         if (id == 4) jugador.TerminarJuego();
-        
+
         jugador.AvanzarSala();
         GuardarJugador(jugador);
-
-       
-        if (id == 1)
+        if (id == 2)
         {
-            return View("PuertaDesbloqueada");
+            return View("PuertaDesbloqueada"); // luego redirige con JS
         }
 
-        
         return RedirectToAction("Sala", new { id = jugador.SalaActual });
     }
     else
