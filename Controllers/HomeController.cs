@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using TP05-SCHNAIDER.Models;
-using Newtonsoft.Json;
+using System.Text.Json;
+using TP05_SCHNAIDER.Models;
 
+namespace TP05_SCHNAIDER.Controllers{
 public class HomeController : Controller
 {
     private Jugador ObtenerJugador()
@@ -18,17 +19,17 @@ public class HomeController : Controller
     }
 
     public IActionResult Index(){
-        View();
+        return View();
     }
     public IActionResult Historia(){
-        View();
+        return View();
     }
     public IActionResult Creditos(){
-        View();
+        return View();
     }
     [HttpGet]
     public IActionResult Iniciar(){
-        View();
+        return View();
     }
     [HttpPost]
     public IActionResult Iniciar(string nombre)
@@ -42,7 +43,7 @@ public class HomeController : Controller
     public IActionResult Sala(int id)
     {
         Jugador jugador = ObtenerJugador();
-        if (jugador == null || jugador.SalaActual < id)
+        if (jugador == null)
         {
             return RedirectToAction("Index");
         }
@@ -50,38 +51,51 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult ResolverSala(int id, string codigo)
-    {
-        Jugador jugador = ObtenerJugador();
-        if (jugador == null) return RedirectToAction("Index");
+public IActionResult ResolverSala(int id, string codigo)
+{
+    Jugador jugador = ObtenerJugador();
+    if (jugador == null) return RedirectToAction("Index");
 
-        if (ControladorJuego.ValidarCodigo(codigo, id))
+    if (ControladorJuego.ValidarCodigo(codigo, id))
+    {
+        if (id == 2) jugador.ObtenerLlave();
+        if (id == 4) jugador.TerminarJuego();
+        
+        jugador.AvanzarSala();
+        GuardarJugador(jugador);
+
+       
+        if (id == 1)
         {
-            if (id == 2) jugador.ObtenerLlave();
-            if (id == 4) jugador.TerminarJuego();
-            jugador.AvanzarSala();
-            GuardarJugador(jugador);
-            return RedirectToAction("Sala", new { id = jugador.SalaActual });
+            return View("PuertaDesbloqueada");
         }
-        else
-        {
-            jugador.IncrementarErrores();
-            if (id == 4 && jugador.IntentosFallidos >= 3)
-            {
-                jugador.TerminarJuego();
-                GuardarJugador(jugador);
-                return RedirectToAction("FinalMalo");
-            }
-            GuardarJugador(jugador);
-            ViewBag.Error = "Código incorrecto. Intentá nuevamente.";
-            return View("Sala" + id);
-        }
+
+        
+        return RedirectToAction("Sala", new { id = jugador.SalaActual });
     }
+    else
+    {
+        jugador.IncrementarErrores();
+
+        if (id == 4 && jugador.IntentosFallidos >= 3)
+        {
+            jugador.TerminarJuego();
+            GuardarJugador(jugador);
+            return RedirectToAction("FinalMalo");
+        }
+
+        GuardarJugador(jugador);
+        ViewBag.Error = "Código incorrecto. Intentá nuevamente.";
+        return View("Sala" + id);
+    }
+}
+
 
     public IActionResult FinalBueno(){
-        View();
+        return View();
     }
     public IActionResult FinalMalo(){
-        View();
+       return View();
     }
+}
 }

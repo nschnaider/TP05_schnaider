@@ -1,4 +1,4 @@
-namespace TP05-SCHNAIDER.Models;
+namespace TP05_SCHNAIDER.Models;
 using Newtonsoft.Json;
 public class Jugador
 {
@@ -33,4 +33,5 @@ public class Jugador
     } 
     public void IncrementarErrores(){
         IntentosFallidos++;
+}
 }

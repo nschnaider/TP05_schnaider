@@ -1,21 +1,42 @@
 @{
     ViewData["Title"] = "Sala 1 - Vagón de Equipajes";
 }
-<h2>🚪 Vagón de Equipajes</h2>
-<p>Observás 5 valijas. Solo 3 se pueden abrir.</p>
-<ul>
-    <li>Valija 1: Foto con el número “7” (tatuaje en una mano)</li>
-    <li>Valija 2: Carta con la palabra “cuatro” parcialmente tachada</li>
-    <li>Valija 3: Pasaje de tren: “Asiento N° 2”</li>
-</ul>
-<p>¿Qué número se forma?</p>
+<div class="container" style="max-width: none; padding: 0;">
+    <h2 style="text-align: center;">🚪 Vagón de Equipajes</h2>
+    <p style="text-align: center;">Explorá el vagón. Encontrá las valijas ocultas y descubrí el código para avanzar.</p>
 
-<form method="post" asp-action="ResolverSala" asp-route-id="1">
-    <input type="text" name="codigo" placeholder="Ingresá la clave (3 dígitos)" required />
-    <button type="submit">Desbloquear puerta</button>
-</form>
+    <div class="mapa-interactivo">
+        
+        <div class="valija" style="top: 40%; left: 15%;" onclick="mostrarNumero(this)">
+            <img src="~/img/valija1.png" alt="Valija 1" />
+            <span class="numero">7</span>
+        </div>
+        <div class="valija" style="top: 60%; left: 40%;" onclick="mostrarNumero(this)">
+            <img src="~/img/valija2.png" alt="Valija 2" />
+            <span class="numero">4</span>
+        </div>
+        <div class="valija" style="top: 30%; left: 70%;" onclick="mostrarNumero(this)">
+            <img src="~/img/valija3.webp" alt="Valija 3" />
+            <span class="numero">2</span>
+        </div>
+    </div>
 
-@if (ViewBag.Error != null)
-{
-    <p style="color:red">@ViewBag.Error</p>
+    <form method="post" asp-action="ResolverSala" asp-route-id="1" style="text-align: center; margin-top: 2rem;">
+        <input type="text" name="codigo" placeholder="Ingresá la clave (3 dígitos)" required />
+        <button type="submit">Desbloquear puerta</button>
+    </form>
+
+    @if (ViewBag.Error != null)
+    {
+        <p class="error">@ViewBag.Error</p>
+    }
+</div>
+
+@section Scripts {
+<script>
+    function mostrarNumero(elemento) {
+        const numero = elemento.querySelector(".numero");
+        numero.style.display = "block";
+    }
+</script>
 }

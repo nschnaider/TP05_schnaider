@@ -1,4 +1,4 @@
-namespace TP05-SCHNAIDER.Models;
+namespace TP05_SCHNAIDER.Models;
 using Newtonsoft.Json;
 public class ControladorJuego
 {
