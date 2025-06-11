@@ -3,21 +3,22 @@ using Newtonsoft.Json;
 public class ControladorJuego
 {
      [JsonProperty]
-    public static string CodigoEquipaje { get; } = "742";
+    public string CodigoEquipaje { get; private set;} = "742";
      [JsonProperty]
-    public static string CodigoComedor { get; } = "358";
+    public string CodigoComedor { get; private set;} = "358";
      [JsonProperty]
-    public static int PosicionManiqui { get; } = 2;
+    public string acertijo { get; private set;} = "ticket";
 
     public static string ObtenerCodigoFinal()
     {
-        return CodigoEquipaje + CodigoComedor + PosicionManiqui.ToString();
+        return CodigoEquipaje + CodigoComedor + acertijo;
     }
 
     public static bool ValidarCodigo(string codigoIngresado, int sala)
     {
         if (sala == 1) return codigoIngresado == CodigoEquipaje;
         if (sala == 2) return codigoIngresado == CodigoComedor;
+        if (sala == 3) return codigoIngresado == acertijo;
         if (sala == 4) return codigoIngresado == ObtenerCodigoFinal();
         return false;
     }

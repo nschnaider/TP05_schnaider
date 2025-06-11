@@ -11,6 +11,8 @@ public class Jugador
     [JsonProperty]
     public bool JuegoTerminado { get; private set; }
     [JsonProperty]
+    public bool acertijoCorrecto {get; private set;}
+    [JsonProperty]
     public int IntentosFallidos { get; private set; }
 
     public Jugador(string nombre)
@@ -20,6 +22,7 @@ public class Jugador
         TieneLlave = false;
         JuegoTerminado = false;
         IntentosFallidos = 0;
+        acertijoCorrecto = false;
     }
 
     public void AvanzarSala(){
@@ -34,4 +37,7 @@ public class Jugador
     public void IncrementarErrores(){
         IntentosFallidos++;
 }
+    public void AcertijoTerminado(){
+        acertijoCorrecto = true;
+    }
 }

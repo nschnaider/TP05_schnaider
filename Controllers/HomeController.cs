@@ -59,6 +59,7 @@ public IActionResult ResolverSala(int id, string codigo)
     if (ControladorJuego.ValidarCodigo(codigo, id))
     {
         if (id == 2) jugador.ObtenerLlave();
+        if (id == 3) jugador.AcertijoTerminado();
         if (id == 4) jugador.TerminarJuego();
 
         jugador.AvanzarSala();
