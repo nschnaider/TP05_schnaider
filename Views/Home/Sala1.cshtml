@@ -1,42 +1,32 @@
 @{
     ViewData["Title"] = "Sala 1 - Vagón de Equipajes";
 }
-<div class="container" style="max-width: none; padding: 0;">
-    <h2 style="text-align: center;">🚪 Vagón de Equipajes</h2>
-    <p style="text-align: center;">Explorá el vagón. Encontrá las valijas ocultas y descubrí el código para avanzar.</p>
-
-    <div class="mapa-interactivo">
+<body>
+    <main class = "sala1">
+        <section class = "intro">
+             <h2>🚪 Vagón de Equipajes</h2>
+            <p>Explorá el vagón. Encontrá las valijas ocultas y descubrí el código para avanzar.</p>
+            <form method="post" asp-action="Salas">
+             <input type="text" name="codigo" placeholder="Ingresá la clave (3 dígitos)"/>
+             <button type="submit">Desbloquear puerta</button>
+             </form>
+              @if (ViewBag.Error != null)
+             {
+                  <section class = "error">
+                 <p>@ViewBag.Error</p>
+                  </section>
+             }
+        </section>
         
-        <div class="valija" style="top: 40%; left: 15%;" onclick="mostrarNumero(this)">
-            <img src="~/img/valija1.png" alt="Valija 1" />
-            <span class="numero">7</span>
-        </div>
-        <div class="valija" style="top: 60%; left: 40%;" onclick="mostrarNumero(this)">
-            <img src="~/img/valija2.png" alt="Valija 2" />
-            <span class="numero">4</span>
-        </div>
-        <div class="valija" style="top: 30%; left: 70%;" onclick="mostrarNumero(this)">
-            <img src="~/img/valija3.webp" alt="Valija 3" />
-            <span class="numero">2</span>
-        </div>
-    </div>
+        <section class ="valija1"> 
+            <img src="~/img/valija1.png" alt="Valija 1" onclick="7">
+         </section>
+         <section class ="valija2"> 
+            <img src="~/img/valija2.png" alt="Valija 2" onclick="4">
+         </section>
+         <section class ="valija3"> 
+            <img src="~/img/valija3.webp" alt="Valija 3" onclick="2">
+         </section>
 
-    <form method="post" asp-action="ResolverSala" asp-route-id="1" style="text-align: center; margin-top: 2rem;">
-        <input type="text" name="codigo" placeholder="Ingresá la clave (3 dígitos)" required />
-        <button type="submit">Desbloquear puerta</button>
-    </form>
-
-    @if (ViewBag.Error != null)
-    {
-        <p class="error">@ViewBag.Error</p>
-    }
-</div>
-
-@section Scripts {
-<script>
-    function mostrarNumero(elemento) {
-        const numero = elemento.querySelector(".numero");
-        numero.style.display = "block";
-    }
-</script>
-}
+    </main>
+</body>

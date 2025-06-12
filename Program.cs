@@ -1,13 +1,13 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// 🛠 Agregar servicios antes de Build
+
 builder.Services.AddControllersWithViews();
-builder.Services.AddSession(); // ✅ esto va antes de Build
+builder.Services.AddSession(); 
 
 var app = builder.Build();
 
-// ⛓ Middleware
-app.UseSession(); // ✅ este sí va después de Build
+
+app.UseSession();
 
 if (!app.Environment.IsDevelopment())
 {

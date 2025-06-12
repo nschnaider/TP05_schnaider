@@ -25,6 +25,12 @@
         <button type="submit">Enviar</button>
     </form>
 
+      @if (ViewBag.Mensaje != null)
+    {
+        <p class="mensaje">@ViewBag.Mensaje</p>
+    }
+
+
     @if (ViewBag.Error != null)
     {
         <p class="error">@ViewBag.Error</p>

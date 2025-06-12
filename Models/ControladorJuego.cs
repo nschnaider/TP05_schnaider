@@ -3,23 +3,53 @@ using Newtonsoft.Json;
 public class ControladorJuego
 {
      [JsonProperty]
-    public string CodigoEquipaje { get; private set;} = "742";
+     public Jugador jugador{get; private set;}
      [JsonProperty]
-    public string CodigoComedor { get; private set;} = "358";
+    public string CodigoEquipaje { get; private set;}
      [JsonProperty]
-    public string acertijo { get; private set;} = "ticket";
-
-    public static string ObtenerCodigoFinal()
+    public string CodigoComedor { get; private set;}
+     [JsonProperty]
+    public string acertijo { get; private set;}
+    
+    public ControladorJuego(string nombre){
+        jugador = new Jugador(nombre);
+        CodigoEquipaje = "742";
+        CodigoComedor = "358";
+        acertijo = "ticket";
+        }
+        public string ObtenerCodigoFinal()
     {
-        return CodigoEquipaje + CodigoComedor + acertijo;
+        string resultado = acertijo + CodigoComedor + CodigoEquipaje;
+        return resultado;
     }
 
-    public static bool ValidarCodigo(string codigoIngresado, int sala)
+    public bool ValidarCodigo(string codigoIngresado)
     {
-        if (sala == 1) return codigoIngresado == CodigoEquipaje;
-        if (sala == 2) return codigoIngresado == CodigoComedor;
-        if (sala == 3) return codigoIngresado == acertijo;
-        if (sala == 4) return codigoIngresado == ObtenerCodigoFinal();
-        return false;
+        bool validado = false;
+        switch (jugador.SalaActual){
+            case 1:
+            if(codigoIngresado == CodigoEquipaje){
+                validado = true;
+            }
+            break;
+            case 2:
+            if(codigoIngresado == CodigoComedor){
+                validado = true;
+            }
+            break;
+            case 3:
+            if(codigoIngresado == acertijo){
+                validado = true;
+            }
+            break;
+            case 4:
+            if(codigoIngresado == ObtenerCodigoFinal()){
+                validado = true;
+            }
+            break;
+        }
+        return validado;
     }
-}
+    }
+    
+    

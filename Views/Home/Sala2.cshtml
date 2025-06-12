@@ -1,41 +1,73 @@
 @{
     ViewData["Title"] = "Sala 2 - Vagón Comedor";
 }
-<div class="sala2-comedor">
-    <div class="overlay">
-        <h2>🍽️ Vagón Comedor</h2>
-        <p>Explorá el vagón. ¿Cuántos platos, copas y servilletas ves?</p>
-    </div>
+<body class = "sala2">
+    <main>
+        <section class = "intro">
+            <h2>🍽️ Vagón Comedor</h2>
+             <p>Explorá el vagón. ¿Cuántos platos, copas y servilletas ves?</p>
+              <form method="post" asp-action="Salas">
+              <input type="text" name="codigo" placeholder="Ingresá la clave (3 dígitos)"/>
+               <button type="submit">Desbloquear puerta</button>
+                </form>
+                 @if (ViewBag.Error != null)
+                {
+                  <section class = "error">
+                  <p>@ViewBag.Error</p>
+                 </section>
+                 }
+        </section>
+     <section class = "plato1">
+            <img src="plato.png" alt="plato">
+         </section>
+         <section class = "plato2">
+            <img src="plato.png" alt="plato">
+         </section>
+         <section class = "plato3">
+            <img src="plato.png" alt="plato">
+         </section>
 
-<div class="objeto plato" style="top: 42.5%; left: 25.5%;"></div> <!-- mesa izquierda delantera -->
-<div class="objeto plato" style="top: 56.5%; left: 50.5%;"></div> <!-- centro -->
-<div class="objeto plato" style="top: 70.5%; left: 74.5%;"></div> <!-- derecha trasera -->
+         <section class = "copa1">
+            <img src="copa.png" alt="copa">
+         </section>
+         <section class = "copa2">
+            <img src="copa.png" alt="copa">
+         </section>
+         <section class = "copa3">
+            <img src="copa.png" alt="copa">
+         </section>
+         <section class = "copa4">
+            <img src="copa.png" alt="copa">
+         </section>
+         <section class = "copa5">
+            <img src="copa.png" alt="copa">
+         </section>
+         
+         <section class = "servilleta1">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
+         <section class = "servilleta2">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
+         <section class = "servilleta3">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
+         <section class = "servilleta4">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
+         <section class = "servilleta5">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
+         <section class = "servilleta6">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
+         <section class = "servilleta7">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
+         <section class = "servilleta8">
+            <img src="servilleta.webp" alt="servilleta">
+         </section>
 
-<!-- COPAS -->
-<div class="objeto copa" style="top: 41.5%; left: 32.5%;"></div>
-<div class="objeto copa" style="top: 46.5%; left: 59.5%;"></div>
-<div class="objeto copa" style="top: 57.5%; left: 27.5%;"></div>
-<div class="objeto copa" style="top: 71.5%; left: 35.5%;"></div>
-<div class="objeto copa" style="top: 77.5%; left: 60.5%;"></div>
+    </main>
+</body>
 
-<!-- SERVILLETAS -->
-<div class="objeto servilleta" style="top: 41.5%; left: 19.5%;"></div>
-<div class="objeto servilleta" style="top: 45.5%; left: 66.5%;"></div>
-<div class="objeto servilleta" style="top: 50.5%; left: 40.5%;"></div>
-<div class="objeto servilleta" style="top: 58.5%; left: 33.5%;"></div>
-<div class="objeto servilleta" style="top: 64.5%; left: 68.5%;"></div>
-<div class="objeto servilleta" style="top: 72.5%; left: 47.5%;"></div>
-<div class="objeto servilleta" style="top: 78.5%; left: 33.5%;"></div>
-<div class="objeto servilleta" style="top: 81.5%; left: 68.5%;"></div>
-
-    <!-- FORMULARIO -->
-    <form method="post" asp-action="ResolverSala" asp-route-id="2" class="form-comedor">
-        <input type="text" name="codigo" placeholder="Combinación de la caja fuerte" required />
-        <button type="submit">Abrir caja fuerte</button>
-    </form>
-
-    @if (ViewBag.Error != null)
-    {
-        <p class="error">@ViewBag.Error</p>
-    }
-</div>
