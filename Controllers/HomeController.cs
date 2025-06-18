@@ -54,6 +54,7 @@ public class HomeController : Controller
         {
             siguiente = "FinalBueno";
         }
+        HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
         ViewBag.Error = error;
         return View(siguiente);
         }
