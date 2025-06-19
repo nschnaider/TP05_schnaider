@@ -1,3 +1,105 @@
+.body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('/img/fondo-niebla.jpg');
+    background-repeat: no-repeat;       
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+}
+
+.pantalla-inicio {
+    background-color: rgba(20, 20, 20, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255, 0, 100, 0.3);
+    text-align: center;
+    max-width: 600px;
+}
+
+.pantalla-inicio h1 {
+    font-size: 2.5em;
+    color: #ff3c80;
+    margin-bottom: 10px;
+}
+
+.pantalla-inicio p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.botones-inicio {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.boton-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #2c2c2c;
+    color: #fff;
+    border: 2px solid #ff3c80;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-bottom: 3%;
+}
+
+.boton-link:hover {
+    background-color: #ff3c80;
+    color: #0f0f0f;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff3c80;
+}
+
+.body form {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 0, 100, 0.3);
+    text-align: center;
+}
+
+.body h2 {
+    color: #ff3c80;
+    margin-bottom: 25px;
+    font-size: 170%;
+}
+
+.body input{
+    padding: 10px 15px;
+    width: 220px;
+    border: 2px solid #ff3c80;
+    border-radius: 6px;
+    background-color: #1c1c1c;
+    color: #fff;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.body input ::placeholder {
+    color: #999;
+}
+
+.body button{
+    padding: 10px 20px;
+    background-color: #ff3c80;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.body button:hover {
+    background-color: #ff0055;
+    transform: scale(1.05);
+}
 
 
 .valija {
@@ -5,45 +107,58 @@
     transform: translate(-50%, -50%);
     transition: transform 0.2s;
 }
-
-
 .valija img {
     width: 60px;
     border-radius: 6px;
     opacity: 15%;
-
 }
-
-
 .valija:hover img {
     transform: scale(1.1);
 }
-
-
-
 .numero {
     display: none;
     position: absolute;
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #ffffff;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-}
-.sala1{
-    background-image: url('/img/fondo-vagon-equipaje.png');
-    position: relative;
-    width: 100%;
-    height: 1000px;
-    
-    background-size: cover;
-    background-position: center;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #ffffff;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+    }
+    .sala1{
+        background-image: url('/img/fondo-vagon-equipaje.png');
+        position: relative;
+        width: 100%;
+        height: 1000px;
+        
+        background-size: cover;
+        background-position: center;
 }
 .intro h2,p{
     color: #ffffff;
     font-weight: bolder;
     font-family: Arial, Helvetica, sans-serif;
 }
+ .intro{
+    text-align: center;
+    background-color: rgb(117, 158, 158);
+    width: 40%;
+    margin-left: 30%;
+    padding-bottom: 2%;
+    padding-top: 1%;
+    border: 10px solid black;
+ }
+ .error p{
+    color: red;
+ }
+ .sala2{
+    background-image: url('/img/fondo-comedor.webp');
+    background-repeat: no-repeat;       
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+    width: 100%;
+ }
+
