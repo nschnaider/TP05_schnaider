@@ -14,7 +14,7 @@ public class ControladorJuego
     public ControladorJuego(string nombre){
         jugador = new Jugador(nombre);
         CodigoEquipaje = "742";
-        CodigoComedor = "358";
+        CodigoComedor = "473";
         acertijo = "ticket";
         }
         public string ObtenerCodigoFinal()

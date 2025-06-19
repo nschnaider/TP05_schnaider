@@ -154,11 +154,16 @@
     color: red;
  }
  .sala2{
-    background-image: url('/img/fondo-comedor.webp');
+    background-image: url('/img/fondo-comedor.png');
     background-repeat: no-repeat;       
     background-size: cover;
     background-position: center;
     height: 950px;
     width: 100%;
  }
+ .sala3{
+    background-image: url('/img/fondo-pasajeros.png');
+    height: 950px;
+ }
+
 

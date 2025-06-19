@@ -1,38 +1,31 @@
 @{
     ViewData["Title"] = "Sala 3 - Vagón de Pasajeros";
 }
-<div class="container">
-    <h2>🎭 Vagón de Pasajeros</h2>
-    <p>Para seguir con el juego, debes responder este acertijo. Pero rapido porque el tiempo se acaba...</p>
-    <p><strong>Pista:</strong> “Solo los que parten lo tienen, aunque nunca lo compraron. Sin él, no hay camino; con él, no hay regreso.”</p>
+<section class = "sala3">
 
-    <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
-        <p>En el tren que cruza el velo mortal,
-            todo viajero debe tener su aval.
-            No es objeto que puedas lanzar,
-            ni tampoco algo que puedas guardar.
-            Está en tu mano, pero no pesa,
-            sin él, la puerta jamás empieza.
 
-            No se ve con ojos de vivos,
-            pero lo exige el guardia furtivo.
-            Un papel que no se arruga,
-            y en cada viaje, se esfuma.</p>
+    <section class = "intro">
+        <h2>🎭 Vagón de Pasajeros</h2>
+    <div>
+        <p>Me buscan con prisa al llegar la estación,
+sin mí no hay entrada, ni viaje, ni acción.
+Aunque soy solo un papel, mi poder es total,
+sin mí te quedás, en el andén... y mal.
+¿Qué soy?</p>
     </div>
-
+    
+    
     <form method="post" asp-action="Salas">
         <input type="text" name="codigo" placeholder="Respuesta"required />
         <button type="submit">Enviar</button>
     </form>
 
-      @if (ViewBag.Mensaje != null)
-    {
-        <p class="mensaje">@ViewBag.Mensaje</p>
-    }
 
-
-    @if (ViewBag.Error != null)
-    {
-        <p class="error">@ViewBag.Error</p>
-    }
-</div>
+     @if (ViewBag.Error != null)
+                {
+                  <section class = "error">
+                  <p>@ViewBag.Error</p>
+                 </section>
+                 }
+</section>
+</section>
