@@ -165,5 +165,94 @@
     background-image: url('/img/fondo-pasajeros.png');
     height: 950px;
  }
+.sala4{
+    background-image: url('/img/fondo-cabina.png') ;
+    background-repeat: no-repeat;       
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+}
+.bueno {
+    background-image: url('/img/fondo-bueno.png');
+    background-size: cover;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    height: 920px;
+    align-items: center;
+    text-align: center;
+}
+
+.bueno h2 {
+    color: #00ff99;
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+    font-size: 3em;
+}
+
+.bueno p {
+    font-size: 1.5em;
+    text-shadow: 0 0 5px #666;
+    margin: 10px 0;
+}
+
+.bueno p:nth-of-type(2) {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+.bueno a {
+    color: #66ccff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+.bueno a:hover {
+    color: #4b05f0;
+    text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99;
+}
+
+.malo {
+    background-image: url('/img/fondo-malo.png');
+    color: #ff004c;
+    font-family: 'Courier New', Courier, monospace;
+    background-repeat: no-repeat;       
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.malo h2 {
+    font-size: 3em;
+}
+
+.malo p:first-of-type {
+    font-size: 1.5em;
+}
+
+.malo p:last-of-type {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+.malo a {
+    color: #66ccff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.malo a:hover {
+    color: #ff004c;
+}
+
 
 

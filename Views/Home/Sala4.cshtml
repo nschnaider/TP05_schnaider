@@ -1,19 +1,21 @@
 @{
     ViewData["Title"] = "Sala 4 - Vagón del Maquinista";
 }
-<div class="container">
+<section class = "sala4">
+<section class="intro">
     <h2>⚙️ Vagón del Maquinista</h2>
     <p>Una consola se ilumina al verte llegar. Es tu última oportunidad.</p>
-
-    <img src="~/img/maquina.webp" alt="Consola de control" style="display: block; margin: 0 auto; max-width: 400px;" />
 
     <form method="post" asp-action="Salas">
         <input type="text" name="codigo" placeholder="Código final (ej. 7423582)" required />
         <button type="submit">Activar Freno</button>
     </form>
 
-    @if (ViewBag.Error != null)
-    {
-        <p class="error">@ViewBag.Error</p>
-    }
-</div>
+     @if (ViewBag.Error != null)
+                {
+                  <section class = "error">
+                  <p>@ViewBag.Error</p>
+                 </section>
+                 }
+</section>
+</section>
