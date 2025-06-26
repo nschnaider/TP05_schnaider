@@ -58,5 +58,10 @@ public class HomeController : Controller
         ViewBag.Error = error;
         return View(siguiente);
         }
+         public IActionResult Sala2(){
+        return View ("Sala2p2");
     }
+    }
+
+   
 }

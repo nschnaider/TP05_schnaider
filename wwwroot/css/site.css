@@ -100,6 +100,82 @@
     background-color: #ff0055;
     transform: scale(1.05);
 }
+.historia {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(30, 30, 30, 0.85)),
+                url('/images/fondo-tren-fantasma.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0e0e0;
+    padding: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    height: 870px;
+}
+
+.historia h2 {
+    color: #ff0055;
+    text-shadow: 2px 2px 5px #000;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.historia p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.historia a {
+    color: #ff55aa;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.historia a:hover {
+    color: #ffaaee;
+    text-decoration: underline;
+}
+.creditos {
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(30, 30, 30, 0.85)),
+                url('/images/fondo-creditos.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 40px;
+    border-radius: 10px;
+    color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
+    height: 870px;
+}
+
+.creditos h2 {
+    color: #ff55aa;
+    text-shadow: 2px 2px 4px #000;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.creditos ul {
+    list-style-type: none;
+    padding: 0;
+    width: 15%;
+}
+
+.creditos li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.creditos a {
+    color: #ff55aa;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.creditos a:hover {
+    color: #ffaaee;
+    text-decoration: underline;
+}
 
 
 .valija {
@@ -160,6 +236,19 @@
     background-position: center;
     height: 950px;
     width: 100%;
+ }
+ .sala2p2{
+    background-image: url('/img/fondo-comedorp2.png');
+    background-repeat: no-repeat;       
+    background-size: cover;
+    background-position: center;
+    height: 950px;
+    width: 100%;
+ }
+ .luz button{
+    margin-top: 10%;
+    margin-left: 80%;
+    background-color: #2b2424 ;
  }
  .sala3{
     background-image: url('/img/fondo-pasajeros.png');
@@ -253,6 +342,7 @@
 .malo a:hover {
     color: #ff004c;
 }
+
 
 
 

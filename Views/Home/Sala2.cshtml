@@ -1,23 +1,19 @@
 @{
     ViewData["Title"] = "Sala 2 - Vagón Comedor";
 }
-<body >
+<body>
     <main class = "sala2">
         <section class = "intro">
-            <h2>🍽️ Vagón Comedor</h2>
-             <p>Te encontrás en un vagón detenido en el tiempo. La niebla lo envuelve, pero hay algo más inquietante: una mesa perfectamente dispuesta. A simple vista, todo parece abandonado… pero hay un orden oculto entre el caos. Observá con atención: los elementos dispuestos no están al azar. Cada grupo tiene su propio número, cada número su propio mensaje. Algunos vienen en pares, otros parecen sobrar, y otros... simplemente esperan ser contados. Cuando la suma del abandono coincide con la lógica del olvido, el tren te dará el código.</p>
-              <form method="post" asp-action="Salas">
-              <input type="text" name="codigo" placeholder="Ingresá la clave (3 dígitos)"/>
-               <button type="submit">Desbloquear puerta</button>
-                </form>
-                 @if (ViewBag.Error != null)
-                {
-                  <section class = "error">
-                  <p>@ViewBag.Error</p>
-                 </section>
-                 }
+            <h2>🍽️ Vagón Comedor</h2>               
+                <h1>Superaste la sala 1, pero para seguir esta muy oscuro no?</h1>
         </section>
-     
+            <section class="luz">
+                    <form method = "post" action= '@Url.Action("Sala2", "Home")'>
+                    <button type="submit">
+                    </form>
+    
+                </section>
+
 
     </main>
 </body>

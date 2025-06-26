@@ -10,18 +10,17 @@ public class ControladorJuego
     public string CodigoComedor { get; private set;}
      [JsonProperty]
     public string acertijo { get; private set;}
+    [JsonProperty]
+    public string codigoFinal { get; private set;}
     
     public ControladorJuego(string nombre){
         jugador = new Jugador(nombre);
         CodigoEquipaje = "742";
         CodigoComedor = "473";
-        acertijo = "ticket";
+        acertijo = "70";
+        codigoFinal = "199";
+
         }
-        public string ObtenerCodigoFinal()
-    {
-        string resultado = acertijo + CodigoComedor + CodigoEquipaje;
-        return resultado;
-    }
 
     public bool ValidarCodigo(string codigoIngresado)
     {
@@ -43,7 +42,7 @@ public class ControladorJuego
             }
             break;
             case 4:
-            if(codigoIngresado == ObtenerCodigoFinal()){
+            if(codigoIngresado == codigoFinal){
                 validado = true;
             }
             break;
