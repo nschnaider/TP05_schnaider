@@ -16,7 +16,7 @@ sin mí te quedás, en el andén... y mal.
     </div>
     
     
-    <form method="post" asp-action="Salas">
+    <form method="post" action= '@Url.Action("Salas", "Home")'>
         <input type="text" name="codigo" placeholder="Ingresa el codigo (2 digitos)" autocomplete = "off"/>
         <button type="submit">Enviar</button>
     </form>

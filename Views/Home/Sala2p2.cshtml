@@ -8,7 +8,7 @@
         <section class = "intro">
             <h2>🍽️ Vagón Comedor</h2>
              <p>Mucho mejor. Presta atencion a los objetos. Pista: PCS</p>
-              <form method="post" asp-action="Salas">
+              <form method="post" action= '@Url.Action("Salas", "Home")'>
               <input type="text" name="codigo" placeholder="Ingresá la clave (3 dígitos)" autocomplete = "off"/>
                <button type="submit">Desbloquear puerta</button>
                 </form>

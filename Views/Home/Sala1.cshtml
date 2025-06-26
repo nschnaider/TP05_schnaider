@@ -8,7 +8,7 @@
         <section class = "intro">
              <h2>🚪 Vagón de Equipajes</h2>
             <p>Explorá el vagón. Encontrá las valijas ocultas y descubrí el código para avanzar.</p>
-            <form method="post" asp-action="Salas" >
+            <form method="post" action= '@Url.Action("Salas", "Home")'>
              <input type="text" name="codigo" autocomplete = "off" placeholder="Ingresá la clave (3 dígitos)"/>
              <button type="submit">Desbloquear puerta</button>
              </form>

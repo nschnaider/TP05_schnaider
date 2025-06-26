@@ -8,9 +8,14 @@ public class Jugador
     public int SalaActual { get; private set; }
     [JsonProperty]
     public int IntentosFallidos { get; private set; }
+    [JsonProperty]
+    public DateTime tiempoInicial { get; private set; }
 
-    public Jugador(string nombre)
+    public TimeSpan calcularTiempo(DateTime t1, DateTime t2){return t2 - t1;}
+
+    public Jugador(string nombre, DateTime t)
     {
+        tiempoInicial= t;
         Nombre = nombre;
         SalaActual = 1;
         IntentosFallidos = 0;

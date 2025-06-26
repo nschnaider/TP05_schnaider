@@ -12,9 +12,11 @@ public class ControladorJuego
     public string acertijo { get; private set;}
     [JsonProperty]
     public string codigoFinal { get; private set;}
+
     
-    public ControladorJuego(string nombre){
-        jugador = new Jugador(nombre);
+    public ControladorJuego(string nombre, DateTime ahora){
+        jugador = new Jugador(nombre, ahora);
+
         CodigoEquipaje = "742";
         CodigoComedor = "473";
         acertijo = "70";

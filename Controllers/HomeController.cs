@@ -26,7 +26,7 @@ public class HomeController : Controller
         if (nombre == null){
             return View ("Index");
         }
-        ControladorJuego juego = new ControladorJuego(nombre);
+        ControladorJuego juego = new ControladorJuego(nombre, DateTime.Now);
         HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
         return View("Sala1");
     }
@@ -43,7 +43,13 @@ public class HomeController : Controller
         else{
            juego.jugador.IncrementarErrores();
             error = "Codigo incorrecto, intente nuevamente";
+            if (juego.jugador.SalaActual == 2){
+                siguiente = "Sala2p2";
+            }
+            else{
             siguiente = "Sala" + juego.jugador.SalaActual;
+            }
+            
             }
         if (juego.jugador.IntentosFallidos >= 10)
             {
@@ -53,6 +59,7 @@ public class HomeController : Controller
         if (juego.jugador.SalaActual == 5)
         {
             siguiente = "FinalBueno";
+            ViewBag.Tiempo = juego.jugador.calcularTiempo(juego.jugador.tiempoInicial, DateTime.Now).ToString(@"mm\:ss");
         }
         HttpContext.Session.SetString("juego", Objeto.ObjectToString(juego));
         ViewBag.Error = error;
@@ -61,7 +68,7 @@ public class HomeController : Controller
          public IActionResult Sala2(){
         return View ("Sala2p2");
     }
-    }
+}
 
    
 }

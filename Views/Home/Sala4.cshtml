@@ -7,7 +7,7 @@
     <h2>⚙️ Vagón del Maquinista</h2>
     <p>Llegaste a la ultima sala. Deberas adivinar el codigo final. Pista: Volver al pasado</p>
 
-    <form method="post" asp-action="Salas">
+    <form method="post" action= '@Url.Action("Salas", "Home")'>
         <input type="text" name="codigo" autocomplete = "off"/>
         <button type="submit">Activar Freno</button>
     </form>
